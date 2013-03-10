@@ -1,7 +1,13 @@
 MyProjectEnglish::Application.routes.draw do
   resources :words
+  resources :exercises
+  get "vocabulary_russian/index"
+  get "vocabulary_english/index"
 
-   root :to => 'words#index'
+
+
+
+   root :to => 'words#index', as: 'index'         #  в рутах вместое root, написало  'hello'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

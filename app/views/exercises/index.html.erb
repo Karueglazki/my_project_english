@@ -1,0 +1,18 @@
+<h1>exercise</h1>
+
+<table>
+     <tr> <label for="post_title"> Sentences</label> </tr>
+      <% @words.each do |word|%>
+          <% if word.vocabulary == 1 %>
+             <tr>
+
+                <td> <%= word.word %>   </td>
+                <td> <%= text_field(:post, :size => 20)%></td>
+
+             </tr>
+          <% end %>
+      <% end %>
+      <%= submit_tag "Test me!", :type => 'button', :onclick => 'alert("It works!")' %>
+
+
+</table>

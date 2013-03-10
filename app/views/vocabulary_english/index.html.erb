@@ -1,0 +1,12 @@
+<h1>VocabularyEnglish#index</h1>
+<p>List of english words</p>
+<table>
+<% @words.each do |word|%>
+    <% if word.vocabulary == 2 %>
+        <tr>
+            <td> <%= word.word %>    </td>
+            <td> <%= word.translate %>    </td>
+        </tr>
+    <% end %>
+<% end %>
+</table>

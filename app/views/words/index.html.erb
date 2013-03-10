@@ -11,7 +11,7 @@
   </tr>
 
 <% @words.each do |word| %>
-  <tr>
+  <tr class='list_words'>
     <td><%= word.vocabulary %></td>
     <td><%= word.word %></td>
     <td><%= word.translate %></td>
@@ -25,3 +25,5 @@
 <br />
 
 <%= link_to 'New Word', new_word_path %>
+
+
