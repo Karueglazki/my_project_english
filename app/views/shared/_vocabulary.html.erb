@@ -1,0 +1,11 @@
+
+<table>
+  <% @words.each do |word|%>
+      <% if word.vocabulary == @voc_id %>
+          <tr>
+            <td> <%= word.word %>    </td>
+            <td> <%= word.translate %>    </td>
+          </tr>
+      <% end %>
+  <% end %>
+</table>

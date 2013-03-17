@@ -2,16 +2,18 @@
 
 <table>
      <tr> <label for="post_title"> Sentences</label> </tr>
-      <% @words.each do |word|%>
-          <% if word.vocabulary == 1 %>
+
+          <% if @word.vocabulary == 1 %>
              <tr>
+                <td> <%= @word.id %>   </td>
+                <td> <%= @word.word %>   </td>
 
-                <td> <%= word.word %>   </td>
-                <td> <%= text_field(:post, :size => 20)%></td>
-
-             </tr>
           <% end %>
-      <% end %>
+                <td> <%= text_field(:post, :size => 20)%></td>
+             </tr>
+
+
+
       <%= submit_tag "Test me!", :type => 'button', :onclick => 'alert("It works!")' %>
 
 

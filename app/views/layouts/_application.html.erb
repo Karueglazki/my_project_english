@@ -1,0 +1,15 @@
+<div class="sidebar">
+  <ul>
+    <li> <%= link_to 'home', index_path %></li>
+    <li> <%= link_to 'vocabulary russian', vocabulary_russian_index_path %>
+        <%= $word_voc_count_1 %></li>
+    </li>
+    <li> <%= link_to 'vocabulary english', vocabulary_english_index_path %>
+      <%= $word_voc_count_2 %></li>
+    </li>
+    <li> <%= link_to 'exercises', exercises_path %></li>
+    <li> <%= link_to 'dictionary', new_word_path %>
+      <%= "(#{@words.count})" -%></li>
+    </li>
+  </ul>
+</div>

@@ -1,10 +1,24 @@
 class WordsController < ApplicationController
+  before_filter :do_something
+
+  def do_something
+    @words = Word.all
+    $word_voc_count_2=0
+    $word_voc_count_1=0
+    @words.each do |word|
+      if word.vocabulary == 2
+        $word_voc_count_2 += 1
+          else
+          $word_voc_count_1 += 1
+      end
+    end
+  end
+
+
   # GET /words
   # GET /words.json
   def index
-    @words = Word.all
     #@words = Word.order(:word)
-
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @words }
@@ -14,11 +28,16 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.json
   def show
+  begin
     @word = Word.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @word }
+    rescue ActiveRecord::RecordNotFound
+      logger.error "try to connect with wrong arguments #{params[:id]}"
+      redirect_to words_url, notice: 'word does not exist'
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+        format.json { render json: @word }
+      end
     end
   end
 

@@ -1,12 +1,4 @@
 <h1>VocabularyRussian#index</h1>
 
 <p>List of russian words</p>
-<table>
-  <% @words.each do |word|%>
-      <% if word.vocabulary == 1 %>
-          <tr>
-            <td> <%= word.word %>    </td>
-            <td> <%= word.translate %>    </td>
-          </tr>
-      <% end %>
-  <% end %>
+<%= render '/shared/vocabulary' %>
